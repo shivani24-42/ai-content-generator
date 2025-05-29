@@ -15,39 +15,24 @@ import { useUser } from "@clerk/nextjs";
 import moment from "moment";
 import { useUsage } from "../../_components/UsageContext";
 
-// interface PROPS {
-//   params: {
-//     "template-slug": string;
-//   };
-// }
 interface PROPS {
   params: Promise<{
     "template-slug": string;
   }>;
 }
 
-// function CreateNewContent(props: PROPS) {
-//   const { usage, setUsage } = useUsage();
 function CreateNewContent(props: PROPS) {
   const { usage, setUsage } = useUsage();
 
   // Unwrap params using React.use()
   const params = React.use(props.params);
 
-  // const selectedTemplate: TEMPLATE | undefined = Templates?.find(
-  //   (item) => item.slug == props.params["template-slug"]
-  // );
   const selectedTemplate: TEMPLATE | undefined = Templates?.find(
     (item) => item.slug === params["template-slug"]
   );
 
-  // const [usage, setUsage] = useState(0);
-
   React.useEffect(() => {
     const fetchUsage = async () => {
-      // const res = await fetch("/api/get-usage");
-      // const data = await res.json();
-      // setUsage(data.usage);
       const res2 = await fetch("/api/get-usage");
       const data2 = await res2.json();
       setUsage(data2.usage);
