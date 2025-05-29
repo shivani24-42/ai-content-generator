@@ -140,13 +140,25 @@ import Templates from "@/app/(data)/Templates";
 import { TEMPLATE } from "../../_components/TemplateListSection";
 import ContentClient from "../_components/ContentClient";
 
+// export default function Page({
+//   params,
+// }: {
+//   params: { "template-slug": string };
+// }) {
+//   const selectedTemplate: TEMPLATE | undefined = Templates?.find(
+//     (item) => item.slug == params["template-slug"]
+//   );
+
+//   return <ContentClient selectedTemplate={selectedTemplate} />;
+// }
+
 export default function Page({
   params,
 }: {
   params: { "template-slug": string };
 }) {
-  const selectedTemplate: TEMPLATE | undefined = Templates?.find(
-    (item) => item.slug == params["template-slug"]
+  const selectedTemplate = Templates.find(
+    (item) => item.slug === params["template-slug"]
   );
 
   return <ContentClient selectedTemplate={selectedTemplate} />;
