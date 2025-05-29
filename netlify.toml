@@ -5,15 +5,8 @@
 [build.environment]
   NODE_VERSION = "18"
   NEXT_PRIVATE_TARGET = "server"
-  NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_cm9tYW50aWMtZWxlcGhhbnQtMzAuY2xlcmsuYWNjb3VudHMuZGV2JA
-CLERK_SECRET_KEY=sk_test_fnRb92BDmebEzoc6ooxGtYVQs6sq9lmr1TS0gEdHUM
-  NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
-  NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
-  NEXT_PUBLIC_CLERK_SIGN_IN_FALLBACK_REDIRECT_URL=/
-  NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL=/
-  NEXT_PUBLIC_GOOGLE_GEMINI_API_KEY=AIzaSyBlofZRADzavVzwwK6R3n7meUCBO4aMxwQ
-  NEXT_PUBLIC_DRIZZLE_DB_URL=postgresql://MyDb_owner:npg_5V8amnYjkNSg@ep-small-snow-a4fgft2e-pooler.us-east-1.aws.neon.tech/AI-Content-Generator?sslmode=require
-
+  NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY = "your_key"
+  # Add other env vars as needed
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
