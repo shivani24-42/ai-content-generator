@@ -15,17 +15,30 @@ import { useUser } from "@clerk/nextjs";
 import moment from "moment";
 import { useUsage } from "../../_components/UsageContext";
 
+// interface PROPS {
+//   params: {
+//     "template-slug": string;
+//   };
+// }
 interface PROPS {
-  params: {
+  params: Promise<{
     "template-slug": string;
-  };
+  }>;
 }
 
+// function CreateNewContent(props: PROPS) {
+//   const { usage, setUsage } = useUsage();
 function CreateNewContent(props: PROPS) {
   const { usage, setUsage } = useUsage();
 
+  // Unwrap params using React.use()
+  const params = React.use(props.params);
+
+  // const selectedTemplate: TEMPLATE | undefined = Templates?.find(
+  //   (item) => item.slug == props.params["template-slug"]
+  // );
   const selectedTemplate: TEMPLATE | undefined = Templates?.find(
-    (item) => item.slug == props.params["template-slug"]
+    (item) => item.slug === params["template-slug"]
   );
 
   // const [usage, setUsage] = useState(0);
