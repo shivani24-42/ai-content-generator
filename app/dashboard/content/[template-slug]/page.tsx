@@ -140,13 +140,6 @@ import Templates from "@/app/(data)/Templates";
 import { TEMPLATE } from "../../_components/TemplateListSection";
 import ContentClient from "../_components/ContentClient";
 
-// type Props = {
-//   params: {
-//     "template-slug": string;
-//   };
-// };
-
-// export default function Page({ params }: Props) {
 export default function Page({
   params,
 }: {
